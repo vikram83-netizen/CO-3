@@ -1,0 +1,24 @@
+trains = {}
+
+n = int(input("Enter number of trains: "))
+
+for i in range(n):
+    no = input("Enter train number: ")
+    name = input("Enter train name: ")
+    station = input("Enter station: ")
+    day = input("Enter running day: ")
+    time = input("Enter departure time: ")
+
+    trains[no] = {
+        "name": name,
+        "station": station,
+        "day": day,
+        "time": time
+    }
+
+s = input("Enter station to search: ")
+d = input("Enter day to search: ")
+
+for no in trains:
+    if trains[no]["station"] == s and trains[no]["day"] == d:
+        print(no, trains[no]["name"], trains[no]["time"])
