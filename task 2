@@ -1,0 +1,28 @@
+import copy
+
+a = []
+
+n = int(input("Enter number of elements: "))
+
+for i in range(n):
+    x = int(input("Enter value: "))
+    a.append(x)
+
+t = tuple(a)
+print("Tuple:", t)
+
+b = copy.copy(a)
+c = copy.deepcopy(a)
+
+if n > 0:
+    b[0] = 100
+    c[0] = 200
+
+print("Original:", a)
+print("Shallow copy:", b)
+print("Deep copy:", c)
+
+key = tuple(a)
+d = {key: "Student"}
+
+print("Dictionary:", d)
