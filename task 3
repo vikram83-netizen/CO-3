@@ -1,0 +1,20 @@
+n = int(input("Enter number of complaints: "))
+
+count = {}
+stop = ["not", "high"]
+
+for i in range(n):
+    text = input("Enter complaint: ")
+
+    for word in text.lower().split():
+        if word not in stop:
+            if word in count:
+                count[word] += 1
+            else:
+                count[word] = 1
+
+print("Word frequency:", count)
+
+top = sorted(count.items(), key=lambda x: (-x[1], x[0]))
+
+print("Top 3 words:", top[:3])
