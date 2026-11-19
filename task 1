@@ -1,0 +1,21 @@
+rain = []
+
+n = int(input("Enter number of days: "))
+
+for i in range(n):
+    x = int(input("Enter rainfall: "))
+    rain.append(x)
+
+for i in range(0, n, 7):
+    print("Weekly total:", sum(rain[i:i+7]))
+
+print("Maximum:", max(rain))
+print("Minimum:", min(rain))
+
+for i in range(n-6):
+    avg = sum(rain[i:i+7]) / 7
+    print("Moving average:", round(avg, 2))
+
+for i in range(n):
+    if rain[i] == 0:
+        print("Dry day:", i+1)
