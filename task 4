@@ -1,0 +1,20 @@
+n = int(input("Enter number of AI students: "))
+
+ai = set()
+
+for i in range(n):
+    ai.add(input("Enter register number: "))
+
+m = int(input("Enter number of IOT students: "))
+
+iot = set()
+
+for i in range(m):
+    iot.add(input("Enter register number: "))
+
+print("Class:", ai & iot)
+print("Exactly one:", ai ^ iot)
+
+all_students = ai | iot
+
+print("All registered students:", all_students)
