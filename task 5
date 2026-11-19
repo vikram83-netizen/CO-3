@@ -1,0 +1,17 @@
+n = int(input("Enter number of readings: "))
+
+temp = []
+
+for i in range(n):
+    x = int(input("Enter temperature: "))
+    temp.append(x)
+
+valid = [x for x in temp if -50 <= x <= 50]
+
+f = [(x * 9/5) + 32 for x in valid]
+
+alarm = [x for x in valid if x < 2 or x > 8]
+
+print("Valid readings:", valid)
+print("Fahrenheit:", f)
+print("Alarm readings:", alarm)
